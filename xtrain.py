@@ -13,9 +13,9 @@ import torch.optim as optim
 
 from bidaf import BiDAF
 from rnet import RNet
-from helper import *
+from xhelper import *
 import input.dataloader as loader
-import evaluate as evaluator
+import xeval as evaluator
 from data.preprocessutils import *
 
 USE_CUDA = True

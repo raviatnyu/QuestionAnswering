@@ -12,7 +12,7 @@ import torch.nn.functional as functional
 import torch.optim as optim
 
 import input.dataloader as loader
-import eval as evaluator
+import xeval as evaluator
 from data.preprocessutils import *
 
 #reload(sys)

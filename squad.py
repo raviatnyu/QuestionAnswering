@@ -17,7 +17,7 @@ import torch.optim as optim
 from bidaf import BiDAF
 from rnet import RNet
 import input.dataloader as loader
-import eval as evaluator
+import xeval as evaluator
 from data.preprocessutils import *
 from data.preprocess import *
 from convert import convert
