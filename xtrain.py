@@ -18,7 +18,7 @@ import input.dataloader as loader
 import xeval as evaluator
 from data.preprocessutils import *
 
-USE_CUDA = True
+USE_CUDA = torch.cuda.is_available()
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -66,7 +66,7 @@ def evaluate(dataloader, model, groudtruthjson):
 
 def train_rnet():
 	cur_dir = os.getcwd()
-	glove_dir = '../glove'
+	glove_dir = './glove'
 	glove_filename = 'glove.6B.100d.txt'
 	glove_filepath = os.path.join(glove_dir, glove_filename)
 
@@ -85,13 +85,13 @@ def train_rnet():
 	traingroundtruth = json.load(open(os.path.join(cur_dir,'data/train-v1.1.json')))
 	devgroundtruth = json.load(open(os.path.join(cur_dir,'data/dev-v1.1.json')))
 
-	save_dir = 'models/bidirLSTM10040drop0p0/'
+	save_dir = 'models/rnet/'
 
-	glovefile = open(os.path.join(save_dir, 'glove.pkl'), 'wb')
+	glovefile = open(os.path.join('models', 'glove.pkl'), 'wb')
 	pickle.dump(glove, glovefile)
 	glovefile.close()
 
-	vocabfile = open(os.path.join(save_dir, 'vocab.pkl'), 'wb')
+	vocabfile = open(os.path.join('models', 'vocab.pkl'), 'wb')
 	pickle.dump(vocab, vocabfile)
 	vocabfile.close()
 
@@ -170,7 +170,7 @@ def train_rnet():
 					predictiondict[instance_id] = answer
 					predictiondictadv[instance_id] = post_process(answer)
 
-			if((i+1)%2 == 0):
+			if((i+1)%1 == 0):
 					print('Epoch: [{0}/{1}], Step: [{2}/{3}], Loss: {4}'.format( \
 							epoch+1, num_epochs, i+1, 90000//batch_size, loss.data[0]))
 					sys.stdout.flush()
@@ -197,7 +197,7 @@ def train_rnet():
 
 def train_bidaf():
 	cur_dir = os.getcwd()
-	glove_dir = '../glove'
+	glove_dir = './glove'
 	glove_filename = 'glove.6B.100d.txt'
 	glove_filepath = os.path.join(glove_dir, glove_filename)
 
@@ -214,13 +214,13 @@ def train_bidaf():
 	traingroundtruth = json.load(open(os.path.join(cur_dir,'data/train-v1.1.json')))
 	devgroundtruth = json.load(open(os.path.join(cur_dir,'data/dev-v1.1.json')))
 
-	save_dir = 'models/bidafLSTM100100drop0p2new/'
+	save_dir = 'models/bidaf/'
 
-	glovefile = open(os.path.join(save_dir, 'glove.pkl'), 'wb')
+	glovefile = open(os.path.join('models', 'glove.pkl'), 'wb')
 	pickle.dump(glove, glovefile)
 	glovefile.close()
 
-	vocabfile = open(os.path.join(save_dir, 'vocab.pkl'), 'wb')
+	vocabfile = open(os.path.join('models', 'vocab.pkl'), 'wb')
 	pickle.dump(vocab, vocabfile)
 	vocabfile.close()
 
@@ -273,7 +273,7 @@ def train_bidaf():
 			loss.backward()
 			optimizer.step()
 
-			if((i+1)%2 == 0):
+			if((i+1)%1 == 0):
 					print('Epoch: [{0}/{1}], Step: [{2}/{3}], Loss: {4}'.format( \
 							epoch+1, num_epochs, i+1, 90000//batch_size, loss.data[0]))
 					sys.stdout.flush()

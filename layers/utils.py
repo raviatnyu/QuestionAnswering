@@ -55,7 +55,8 @@ def reverse_sequence(sequence, dim=1):
 	#mask: batch_size*num_words --> dim=1
 	idx = [i for i in range(sequence.size(dim)-1, -1, -1)]
 	#idx = Variable(torch.LongTensor(idx))
-	idx = Variable(torch.LongTensor(idx)).cuda()
+	idx = Variable(torch.LongTensor(idx))
+	if torch.cuda.is_available(): idx = idx.cuda()
 	reverse_sequence = sequence.index_select(dim, idx)
 	return reverse_sequence
 

@@ -3,11 +3,11 @@ import torch.nn as nn
 from torch.autograd import Variable
 import torch.nn.functional as functional
 
-from layers import RNNCharEmb
-from layers import BiDirEncoder
-from layers import BiDirAttention
-from layers import utils as utils
-from layers import similarity as similarity
+from layers.charemb import RNNCharEmb
+from layers.bidirencoder import BiDirEncoder
+from layers.bidirattention import BiDirAttention
+import layers.utils as utils
+import layers.similarity as similarity
 
 class BiDAF(nn.Module):
 

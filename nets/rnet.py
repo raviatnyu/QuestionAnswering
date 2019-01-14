@@ -5,16 +5,17 @@ import torch.nn as nn
 from torch.autograd import Variable
 import torch.nn.functional as functional
 
-from layers import RNNCharEmb
-from layers import BiDirEncoder
-from layers import BiDirAttention
-from layers import SelfAttention
-from layers import UniDirAttention
-from layers import MatchAttention
-from layers import PointerNetwork
-from layers import Gate
-from layers import utils as utils
-from layers import similarity as similarity
+from layers.charemb import RNNCharEmb
+from layers.bidirencoder import BiDirEncoder
+from layers.bidirattention import BiDirAttention
+from layers.selfattention import SelfAttention
+from layers.unidirattention import UniDirAttention
+from layers.matchattention import MatchAttention
+from layers.pointernetwork import PointerNetwork
+from layers.gate import Gate
+import layers.utils as utils
+import layers.similarity as similarity
+
 
 class RNet(nn.Module):
 
@@ -382,6 +383,8 @@ class RNet(nn.Module):
 			best_span[batch][1] = span_prob_max_indices[1]
 		return best_span #best_span: batch_size*2
 
+
+
 if __name__=='__main__':
 	dict_args = {
 				 'use_charemb': True,
@@ -395,7 +398,6 @@ if __name__=='__main__':
 				 'contextemb_rnn_type':'LSTM',
 				 'contextemb_num_layers':3,
 				 'gated_attention_similarity_function': 'ProjectionSimilaritySharedWeights',
-				 'gated_attentio_rnn_type': 'LSTM',
 				 'use_bidirectional': True,
 				 'use_gating': True,
 				 'use_selfmatching': True,
