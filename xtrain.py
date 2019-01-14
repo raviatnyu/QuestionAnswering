@@ -11,12 +11,12 @@ from torch.autograd import Variable
 import torch.nn.functional as functional
 import torch.optim as optim
 
-from bidaf import BiDAF
-from rnet import RNet
+from nets import BiDAF
+from nets import RNet
 from xhelper import *
-import input.dataloader as loader
+from input import loader
 import xeval as evaluator
-from data.preprocessutils import *
+from data import post_process
 
 USE_CUDA = torch.cuda.is_available()
 reload(sys)

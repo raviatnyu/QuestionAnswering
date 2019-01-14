@@ -11,12 +11,11 @@ from torch.autograd import Variable
 import torch.nn.functional as functional
 import torch.optim as optim
 
-from bidaf import BiDAF
-from rnet import RNet
-import input.dataloader as loader
+from nets import BiDAF
+from nets import RNet
+from input import loader
 import xeval as evaluator
-from data.preprocessutils import *
-#from convert import convert
+from data import post_process
 
 USE_CUDA = False
 #reload(sys)

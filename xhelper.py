@@ -11,9 +11,9 @@ from torch.autograd import Variable
 import torch.nn.functional as functional
 import torch.optim as optim
 
-import input.dataloader as loader
+from input import loader
 import xeval as evaluator
-from data.preprocessutils import *
+from data import post_process, extra_token_splits
 
 #reload(sys)
 #sys.setdefaultencoding('utf-8')

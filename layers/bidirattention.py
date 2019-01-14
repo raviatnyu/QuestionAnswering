@@ -58,10 +58,6 @@ class BiDirAttention(nn.Module):
 		if not self.self_match_attention:
 			sequence2_sequence1_attention = utils.attention_pooling(sequence1_attention_weights, sequence1) #sequence2_sequence1_attention: batch_size*iembed1
 
-		#Will it save some memory?
-		if self.training:
-			sequence2_attention_weights = None
-			sequence1_attention_weights = None
 
 		if not self.self_match_attention:
 			return sequence1_sequence2_attention, sequence2_attention_weights, sequence2_sequence1_attention, sequence1_attention_weights #sequence2_sequence1_attention: batch_size*iembed1
