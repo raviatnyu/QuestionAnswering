@@ -4,9 +4,6 @@ from torch.autograd import Variable
 
 import layers.utils as utils
 import layers.similarity as similarity
-#import utils
-#import similarity
-
 
 class BiDirAttention(nn.Module):
 

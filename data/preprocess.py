@@ -1,4 +1,3 @@
-#from data.preprocessutils import *
 from preprocessutils import *
 from nltk import word_tokenize
 from nltk import sent_tokenize

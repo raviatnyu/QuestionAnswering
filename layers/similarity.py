@@ -5,8 +5,6 @@ import torch.nn.functional as functional
 from torch.autograd import Variable
 
 import layers.utils
-#import utils
-
 
 class DotProductSimilarity(nn.Module):
 	def __init__(self, dict_args):

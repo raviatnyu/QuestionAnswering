@@ -2,7 +2,7 @@
 from nltk import word_tokenize
 from nltk import sent_tokenize
 
-#experiment
+# Experiment
 extra_token_splits = ['-', '/', '\u2013', '\u2014', '\u2212']
 
 def extra_tokenize(sentence):
@@ -32,6 +32,7 @@ def find_position(value, cumlist):
 			break
 	return index
 
+# Put them in a list
 def post_process(text):
 	text = text.replace(' – ', '–')
 	text = text.replace(' / ', '/')

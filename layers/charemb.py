@@ -3,7 +3,6 @@ import torch.nn as nn
 from torch.autograd import Variable
 
 import layers.utils as utils
-#import utils
 
 class RNNCharEmb(nn.Module):
 	

@@ -7,9 +7,6 @@ from collections import Counter
 from input.config import *
 from input.dataiter import *
 
-#from config import *
-#from dataiter import *
-
 class Vocab():
 
 	def __init__(self, files):

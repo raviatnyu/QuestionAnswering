@@ -4,9 +4,6 @@ import torch
 from input.vocab import Vocab
 from input.config import *
 
-#from vocab import Vocab
-#from config import *
-
 class Glove():
 
 	def __init__(self, filepath):

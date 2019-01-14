@@ -5,9 +5,6 @@ from torch.autograd import Variable
 import layers.utils as utils
 import layers.similarity as similarity
 from layers.unidirattention import UniDirAttention
-#import utils as utils
-#import similarity as similarity
-#from unidirattention import UniDirAttention
 
 class PointerNetwork(nn.Module):
 

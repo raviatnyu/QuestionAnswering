@@ -7,11 +7,6 @@ import layers.similarity as similarity
 from layers.unidirattention import UniDirAttention
 from layers.unidirattention import UniDirAttentionItr
 from layers.gate import Gate
-#import utils
-#import similarity
-#from unidirattention import UniDirAttention
-#from unidirattention import UniDirAttentionItr
-#from gate import Gate
 
 class MatchAttention(nn.Module):
 

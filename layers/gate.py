@@ -4,7 +4,6 @@ import torch.nn.functional as functional
 from torch.autograd import Variable
 
 import layers.utils
-#import utils
 
 class Gate(nn.Module):
 

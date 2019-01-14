@@ -10,11 +10,6 @@ from input.glove import Glove
 from input.config import *
 from input.dataiter import *
 
-#from vocab import Vocab
-#from glove import Glove
-#from config import *
-#from dataiter import *
-
 class Dataset(data.Dataset):
 	def __init__(self, files):
 		self.files = files

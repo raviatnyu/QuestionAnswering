@@ -6,11 +6,6 @@ from input.glove import Glove
 from input.dataset import Dataset
 from input.config import *
 
-#from vocab import Vocab
-#from glove import Glove
-#from dataset import Dataset
-#from config import *
-
 import torch
 import torch.utils.data as data
 

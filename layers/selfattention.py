@@ -6,11 +6,6 @@ import layers.utils as utils
 import layers.similarity as similarity
 from layers.unidirattention import UniDirAttention
 from layers.unidirattention import UniDirAttentionItr
-#import utils as utils
-#import similarity as similarity
-#from unidirattention import UniDirAttention
-#from unidirattention import UniDirAttentionItr
-
 
 class SelfAttention(nn.Module):
 
