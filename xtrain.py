@@ -64,6 +64,7 @@ def evaluate(dataloader, model, groudtruthjson):
 	return resultadvjson['exact_match'], resultadvjson['f1']
 
 
+#ToDo Remove the duplicacy of the code between RNet and BiDAF training helpers.
 def train_rnet():
 	cur_dir = os.getcwd()
 	glove_dir = './glove'
